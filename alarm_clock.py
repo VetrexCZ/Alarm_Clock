@@ -44,5 +44,6 @@ while True:
         break
     except ValueError as e:
         print(e)
+        
 total_seconds = minutes * 60 + seconds
 alarm(total_seconds)
