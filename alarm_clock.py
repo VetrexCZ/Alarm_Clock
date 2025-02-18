@@ -27,7 +27,22 @@ def alarm(seconds):
     playsound("Internet_projects\\Alarm_clock\\alarm.mp3")
 
 
-minutes = int(input("How many minutes to wait: "))
-seconds = int(input("How many seconds to wait: "))
+while True:
+    try:
+        minutes = int(input("How many minutes to wait: "))
+        if minutes < 0:
+            raise ValueError("Minutes must be a non-negative integer.")
+        break
+    except ValueError as e:
+        print(e)
+
+while True:
+    try:
+        seconds = int(input("How many seconds to wait: "))
+        if seconds < 0:
+            raise ValueError("Seconds must be a non-negative integer.")
+        break
+    except ValueError as e:
+        print(e)
 total_seconds = minutes * 60 + seconds
 alarm(total_seconds)
