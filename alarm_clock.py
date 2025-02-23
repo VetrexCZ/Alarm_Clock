@@ -26,24 +26,34 @@ def alarm(seconds):
 
     playsound("Internet_projects\\Alarm_clock\\alarm.mp3")
 
+def get_valid_input(prompt, input_type="minutes"):
+    while True:
+        try:
+            value = input(f"Enter {prompt}: ")
+            # Check if input is empty
+            if not value.strip():
+                print(f"Error: {input_type} cannot be empty. Please enter a number.")
+                continue
+            
+            # Convert input to integer
+            number = int(value)
 
-while True:
-    try:
-        minutes = int(input("How many minutes to wait: "))
-        if minutes < 0:
-            raise ValueError("Minutes must be a non-negative integer.")
-        break
-    except ValueError as e:
-        print(e)
+            # Check for negative numbers
+            if number < 0:
+                print(f"Error: {input_type} cannot be negative. Please enter a positive number.")
+                continue
+            
+            return number
 
-while True:
-    try:
-        seconds = int(input("How many seconds to wait: "))
-        if seconds < 0:
-            raise ValueError("Seconds must be a non-negative integer.")
-        break
-    except ValueError as e:
-        print(e)
-        
+        except ValueError:
+            print(f"Error: Invalid input. Please enter a valid number for {input_type}.")
+
+
+# Get minutes
+minutes = get_valid_input("number of minutes", "minutes")
+
+# Get seconds
+seconds = get_valid_input("number of seconds", "seconds")
+
 total_seconds = minutes * 60 + seconds
 alarm(total_seconds)
