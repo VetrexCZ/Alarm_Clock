@@ -1,5 +1,5 @@
 # Python Alarm clock !
-# https://www.fesliyanstudios.com/royalty-free-sound-effects-download/alarm-203
+# Alarm sound from: https://www.fesliyanstudios.com/royalty-free-sound-effects-download/alarm-203
 
 from playsound import playsound
 import time
