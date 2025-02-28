@@ -9,7 +9,11 @@ CLEAR = "\033[2J"  # Deletes the screen
 CLEAR_AND_RETURN = "\033[H"  # Moves the cursor to the top left corner of the screen
 
 
-def alarm(seconds):
+def set_the_alarm(seconds):
+    """
+    Sets and runs a countdown timer for the specified number of seconds.
+    Displays remaining time in MM:SS format and plays an alarm sound when finished.
+    """
     time_elapsed = 0
 
     print(CLEAR)
@@ -27,6 +31,10 @@ def alarm(seconds):
     playsound("Internet_projects\\Alarm_clock\\alarm.mp3")
 
 def get_valid_input(prompt, input_type="minutes"):
+    """
+    Prompts user for numerical input and validates it.
+    Ensures input is not empty, negative, and can be converted to an integer.
+    """
     while True:
         try:
             value = input(f"Enter {prompt}: ")
