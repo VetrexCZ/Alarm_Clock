@@ -64,4 +64,4 @@ minutes = get_valid_input("number of minutes", "minutes")
 seconds = get_valid_input("number of seconds", "seconds")
 
 total_seconds = minutes * 60 + seconds
-alarm(total_seconds)
+set_the_alarm(total_seconds)
